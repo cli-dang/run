@@ -1,0 +1,64 @@
+{
+  "name": "@cli-dang/run",
+  "version": "1.0.4",
+  "license": "Apache-2.0",
+  "description": "run a shell script, locally or globally. ESModule.",
+  "type": "module",
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "bin": {
+    "run": "index.js"
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:fix-chmod": "shell-script/fix-chmod.sh",
+    "build:clean": "shell-script/clean_build.sh",
+    "chmodx-run": "npx chmodx --watch",
+    "prepublishOnly": "shell-script/prePublish.sh",
+    "t8": "npx t8 --c8='src:./src|html:|no-questions:|no-print:|all:' unit",
+    "test": "npx 4t unit",
+    "tsc-watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@cli-dang/decors": "^2.0.3",
+    "@cli-dang/input": "^3.2.12"
+  },
+  "devDependencies": {
+    "@cli-dang/chmodx": "^1.0.6",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0",
+    "trythistrythat": "3.0.8",
+    "typescript": "^5.0.3"
+  },
+  "keywords": [
+    "cli",
+    "framework",
+    "flags",
+    "commands",
+    "multi process"
+  ],
+  "author": {
+    "name": "Simone Del Popolo",
+    "email": "simonedelpopolo@outlook.com",
+    "url": "https://github.com/simonedelpopolo"
+  },
+  "homepage": "https://github.com/cli-dang/run#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cli-dang/run.git"
+  },
+  "bugs": {
+    "email": "simonedelpopolo@outlook.com",
+    "url": "https://github.com/cli-dang/run/issues"
+  }
+}
